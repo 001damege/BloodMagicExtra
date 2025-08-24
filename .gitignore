@@ -1,0 +1,8 @@
+# プロジェクトの除外パス
+/.gradle/
+/.idea/
+/build/
+/run/
+/run-data/
+/build/classes/java/main/
+/src/generated/resources/.cache/

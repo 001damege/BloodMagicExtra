@@ -1,0 +1,13 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 5000,
+  "consumptionRate": 5,
+  "drainRate": 5,
+  "input": {
+    "item": "minecraft:netherite_sword"
+  },
+  "output": {
+    "item": "exbm:extra_sacrificial_dagger"
+  },
+  "upgradeLevel": 1
+}
