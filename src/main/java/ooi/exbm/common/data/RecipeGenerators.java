@@ -12,7 +12,6 @@ import wayoftime.bloodmagic.common.data.recipe.BaseRecipeProvider;
 import wayoftime.bloodmagic.common.data.recipe.builder.BloodAltarRecipeBuilder;
 import wayoftime.bloodmagic.common.recipe.ISubRecipeProvider;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 

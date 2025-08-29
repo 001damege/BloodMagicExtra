@@ -40,10 +40,10 @@ public class ExPlayerSacrificeHelper {
         IBloodAltar altar = PlayerSacrificeHelper.getAltar(level, entity.blockPosition());
         if (altar == null) {
             return false;
+        } else {
+            altar.sacrificialDaggerCall(amount, isSacrifice);
+            altar.startCycle();
+            return true;
         }
-
-        altar.sacrificialDaggerCall(amount, isSacrifice);
-        altar.startCycle();
-        return true;
     }
 }
