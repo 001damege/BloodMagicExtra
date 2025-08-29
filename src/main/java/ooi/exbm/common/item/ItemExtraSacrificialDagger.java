@@ -15,7 +15,6 @@ import ooi.exbm.common.util.ExPlayerSacrificeHelper;
 import wayoftime.bloodmagic.common.item.ItemSacrificialDagger;
 import wayoftime.bloodmagic.event.SacrificeKnifeUsedEvent;
 import wayoftime.bloodmagic.util.helper.IncenseHelper;
-import wayoftime.bloodmagic.util.helper.PlayerHelper;
 
 public class ItemExtraSacrificialDagger extends ItemSacrificialDagger {
     public ItemExtraSacrificialDagger(Properties props) {
@@ -40,9 +39,6 @@ public class ItemExtraSacrificialDagger extends ItemSacrificialDagger {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if (PlayerHelper.isFakePlayer(player)) {
-            return super.use(level, player, hand);
-        }
 
         if (this.canUseForSacrifice(stack)) {
             player.startUsingItem(hand);
@@ -81,10 +77,6 @@ public class ItemExtraSacrificialDagger extends ItemSacrificialDagger {
 
         for (int i = 0; i < 8; i++) {
             level.addParticle(DustParticleOptions.REDSTONE, posX + Math.random() - Math.random(), posY + Math.random() - Math.random(), posZ + Math.random() - Math.random(), 0, 0, 0);
-        }
-
-        if (!level.isClientSide && PlayerHelper.isFakePlayer(player)) {
-            return super.use(level, player, hand);
         }
 
         ExPlayerSacrificeHelper.findAndFillAltar(level, player, lpAdded, false);
